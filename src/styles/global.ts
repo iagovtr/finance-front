@@ -14,12 +14,20 @@ const GlobalStyle = createGlobalStyle`
     color: #FFFFFF;
   }
 
+  #root {
+    width: 100%;
+  }
+
   h1, h2, h3, h4, h5, h6, input, button, p {
     margin: 0;
     padding: 0;
     outline: none;
     border: 0;
-    font-weight: 400;
+  }
+
+  ul, li, a {
+    text-decoration: none;
+    list-style: none;
   }
 
   button {
