@@ -5,15 +5,19 @@ import {
   Route,
 } from 'react-router-dom'
 import NotFound from '../modules/NotFound/NotFound'
+import Header from '../modules/Shared/Header/Header'
 
 const Routes = () => {
   return (
-    <BrowserRouter>
-      <Router>
-        <Route path='/' element={""}/>
-        <Route path='*' element={<NotFound/>}/>
-      </Router>
-    </BrowserRouter>
+    <>
+      <Header/>
+      <BrowserRouter>
+        <Router>
+          <Route path='/' element={""}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Router>
+      </BrowserRouter>
+    </>
   )
 }
 
