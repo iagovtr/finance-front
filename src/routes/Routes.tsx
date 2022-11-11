@@ -1,4 +1,3 @@
-import React from 'react'
 import { WrapperContainer, MainContainer } from '../styles/global'
 import {
   BrowserRouter,

@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './styles'
 import CreditCards from '../../assets/icons/credit-card.svg'
 import MasterCard from '../../assets/icons/master-card.svg'

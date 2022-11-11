@@ -39,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
     -moz-appearance: none;
   }
 
+  option {
+    background-color: #2E2E2E;
+  }
+
   ul, li, a {
     text-decoration: none;
     list-style: none;
@@ -50,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const WrapperContainer = styled.div`
+  background: blue;
   position: absolute;
   width: 100%;
   z-index: -1;
@@ -60,6 +65,7 @@ export const WrapperContainer = styled.div`
 export const MainContainer = styled.div`
   position: relative;
   margin: 22px 14px;
+  border: 1px solid;
 `;
 
 export default GlobalStyle

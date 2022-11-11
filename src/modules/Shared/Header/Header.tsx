@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './styles'
 import BrandSvg from '../../../assets/icons/brand-icon.svg'
 import MenuSvg from '../../../assets/icons/menu-icon.svg'

@@ -12,13 +12,20 @@ export const CardWrapper = styled.div`
 `;
 
 export const ListWrapper = styled.div`
+  margin-top: 24px;
+`;
+
+export const FilterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 24px;
 `;
 
 export const ListTitle = styled.h5`
   font-weight: 600;
   font-size: 14px;
 `;
+
+export const Select = styled.select``;
+
+export const Option = styled.option``;
