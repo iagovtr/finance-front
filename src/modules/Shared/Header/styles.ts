@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   padding: 0px 14px;
   position: fixed;
+  background: #333;
 `;
 
 export const HeaderContent = styled.div`

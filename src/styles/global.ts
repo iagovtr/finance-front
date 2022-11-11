@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * { 
@@ -33,6 +33,19 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+`;
+
+export const WrapperContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 50px;
+  overflow: hidden;
+`;
+
+export const MainContainer = styled.div`
+  position: relative;
+  margin: 22px 14px;
 `;
 
 export default GlobalStyle
