@@ -1,6 +1,7 @@
 import React from 'react'
 import * as S from './styles'
 import CreditCard from '../../components/CreditCard/CreditCard'
+import Select from '../../components/Select/Select'
 
 const Transactions = () => {
   return (
@@ -9,6 +10,10 @@ const Transactions = () => {
       <S.CardWrapper>
         <CreditCard/>
       </S.CardWrapper>
+      <S.ListWrapper>
+        <S.ListTitle>Histórico de transações</S.ListTitle>
+        <Select/>
+      </S.ListWrapper>
     </S.Transactions>
   )
 }

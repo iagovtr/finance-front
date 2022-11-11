@@ -1,4 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components'
+import ArrowSelect from '../assets/icons/select-arrow.svg'
 
 const GlobalStyle = createGlobalStyle`
   * { 
@@ -18,11 +19,24 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
-  h1, h2, h3, h4, h5, h6, input, button, p {
+  h1, h2, h3, h4, h5, h6, input, button, p, select {
     margin: 0;
     padding: 0;
     outline: none;
     border: 0;
+  }
+
+  select {
+    width: 110px;
+    height: 35px;
+    padding: 6px;
+    color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 2px;
+    background: url(${ArrowSelect}) 95% 45% no-repeat transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
   ul, li, a {
