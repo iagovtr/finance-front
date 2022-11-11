@@ -1,6 +1,6 @@
 import * as S from './styles'
-import BrandSvg from '../../../assets/icons/brand-icon.svg'
-import MenuSvg from '../../../assets/icons/menu-icon.svg'
+import BrandSvg from '../../../../public/brand-icon.svg'
+import MenuSvg from '../../../../public/menu-icon.svg'
 
 const Header = () => {
   return (

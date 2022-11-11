@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import ArrowSelect from '../assets/icons/select-arrow.svg'
+import ArrowSelect from '../../public/select-arrow.svg'
 
 const GlobalStyle = createGlobalStyle`
   * { 

@@ -1,5 +1,5 @@
 import * as S from './styles'
-import IslandIcon from '../../assets/icons/not-found.svg'
+import IslandIcon from '../../../public/not-found.svg'
 
 const NotFound = () => {
   return (

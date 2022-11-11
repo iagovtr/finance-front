@@ -1,6 +1,6 @@
 import * as S from './styles'
-import CreditCards from '../../assets/icons/credit-card.svg'
-import MasterCard from '../../assets/icons/master-card.svg'
+import CreditCards from '../../../public/credit-card.svg'
+import MasterCard from '../../../public/master-card.svg'
 
 const CreditCard = () => {
   return (
