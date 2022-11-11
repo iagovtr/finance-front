@@ -1,6 +1,6 @@
 import React from 'react'
 import * as S from './styles'
-import IslandIcon from '../../assets/icons/notfound.svg'
+import IslandIcon from '../../assets/icons/not-found.svg'
 
 const NotFound = () => {
   return (
