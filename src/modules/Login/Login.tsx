@@ -1,19 +1,31 @@
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import * as S from './styles'
 import BrandSvg from '../../../public/brand-icon.svg'
 import EmailSvg from '../../../public/email.svg'
 import PasswordSvg from '../../../public/password.svg'
 import { validateForm } from '../../utils/validateForm'
+import useAuth from '../../hooks/useAuth'
 
 const Login = () => {
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
+  const { signed, login } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(signed && signed !== null) {
+      navigate('/transactions');
+    }
+  }, [signed]);
 
   const handleClick = useCallback(() => {
     const validateData = validateForm([email.current?.value, password.current?.value]);
     
     if(!validateData) return console.log("Erro");
-  }, []);
+
+    login(email.current?.value, password.current?.value);
+  }, []); 
 
   return (
     <S.Login>
