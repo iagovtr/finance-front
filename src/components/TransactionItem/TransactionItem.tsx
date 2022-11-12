@@ -1,3 +1,5 @@
+import * as S from './styles'
+
 interface ITransaction {
   name?: string;
   category?: string;
@@ -6,18 +8,21 @@ interface ITransaction {
 
 const TransactionItem = ({ name, category, total }: ITransaction) => {
   return (
-    <div>
-      <div>
-        <div>
-          <img src={`../../../public/${category}.svg`} alt={category} />
-        </div>
-        <div>
-          <h5>{name}</h5>
-          <p>{category}</p>
-        </div>
-        <h4>-{total}</h4>
-      </div>
-    </div>
+    <S.TransactionItem>
+      <S.ContainerLeft>
+        <S.IconBackground>
+          <S.Icon 
+            src={`../../../public/${category}.svg`} 
+            alt={category} 
+          />
+        </S.IconBackground>
+        <S.DetailsContainer>
+          <S.Name>{name}</S.Name>
+          <S.Category>{category}</S.Category>
+        </S.DetailsContainer>
+      </S.ContainerLeft>
+      <S.Total>- {total}</S.Total>
+    </S.TransactionItem>
   )
 }
 

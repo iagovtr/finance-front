@@ -1,7 +1,7 @@
 import { useState, ChangeEvent } from 'react'
 import * as S from './styles'
 import CreditCard from '../../components/CreditCard/CreditCard'
-import TransactionItem from '../../components/TransactionItem/TransactionItem';
+import TransactionItem from '../../components/TransactionItem/TransactionItem'
 
 const Transactions = () => {
   const optionsSelect = ['Hoje', '1 semana', '1 mês'];
@@ -29,11 +29,13 @@ const Transactions = () => {
             }
           </S.Select>
         </S.FilterWrapper>
-        <TransactionItem
-          name='Lago Park'
-          category='vehicle'
-          total='5.00'
-        />
+        <S.TransactionItemWrapper>
+          <TransactionItem
+            name='Lago Park'
+            category='vehicle'
+            total='5.00'
+          />
+        </S.TransactionItemWrapper>
       </S.ListWrapper>
     </S.Transactions>
   )
