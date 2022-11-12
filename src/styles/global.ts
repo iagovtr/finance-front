@@ -26,6 +26,24 @@ const GlobalStyle = createGlobalStyle`
     border: 0;
   }
 
+  input {
+    min-width: 266px;
+    min-height: 35px;
+    border: 1px solid #E5E5E5;
+    border-radius: 2px;
+    background: transparent;
+    padding: 0px 30px;
+    color: #E5E5E5;
+
+    &::placeholder {
+      color: #E5E5E5;
+    }
+
+    &:focus {
+      border-color: #DEF6E5;
+    }
+  }
+
   select {
     width: 110px;
     height: 35px;
@@ -54,7 +72,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const WrapperContainer = styled.div`
-  background: blue;
   position: absolute;
   width: 100%;
   z-index: -1;

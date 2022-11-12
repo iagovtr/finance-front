@@ -7,6 +7,7 @@ import {
 import NotFound from '../modules/NotFound/NotFound'
 import Header from '../modules/Shared/Header/Header'
 import Transactions from '../modules/Transactions/Transactions'
+import Login from '../modules/Login/Login'
 
 const Routes = () => {
   return (
@@ -16,7 +17,7 @@ const Routes = () => {
         <MainContainer>
           <BrowserRouter>
             <Router>
-              <Route path='/' element={""}/>
+              <Route path='/' element={<Login/>}/>
               <Route path='/transactions' element={<Transactions/>}/>
               <Route path='*' element={<NotFound/>}/>
             </Router>
