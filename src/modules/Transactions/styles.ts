@@ -2,6 +2,12 @@ import styled from 'styled-components'
 
 export const Transactions = styled.div``;
 
+export const LoadingWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Title = styled.h2``;
 
 export const CardWrapper = styled.div`

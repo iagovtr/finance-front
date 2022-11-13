@@ -21,7 +21,7 @@ export const IconBackground = styled.div`
   align-items: center;
   min-width: 51px;
   min-height: 46px;
-  background: #DCE6E5;
+  background: #E5E5E5;
   border-radius: 8px;
 `;
 
