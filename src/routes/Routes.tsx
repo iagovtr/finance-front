@@ -9,12 +9,14 @@ import Header from '../modules/Shared/Header/Header'
 import Transactions from '../modules/Transactions/Transactions'
 import Login from '../modules/Login/Login'
 import PrivateRoutes from './PrivateRoutes'
-import { AuthProvider } from '../contexts/AuthContext'
+import useAuth from '../hooks/useAuth'
 
 const Routes = () => {
+  const { signed } = useAuth();
+
   return (
-    <AuthProvider>
-      <Header/>
+    <>
+      {signed && <Header/>}
       <WrapperContainer>
         <MainContainer>
           <BrowserRouter>
@@ -28,7 +30,7 @@ const Routes = () => {
           </BrowserRouter>
         </MainContainer>
       </WrapperContainer>
-    </AuthProvider>
+    </>
   )
 }
 

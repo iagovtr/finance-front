@@ -1,11 +1,14 @@
 import GlobalStyle from './styles/global'
 import Routes from './routes/Routes'
+import { AuthProvider } from './contexts/AuthContext'
 
 const App = () => {
   return (
     <>
-    <Routes/>
-    <GlobalStyle/>
+      <AuthProvider>
+        <Routes/>
+      </AuthProvider>
+      <GlobalStyle/>
     </>
   )
 }
