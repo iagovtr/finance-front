@@ -1,9 +1,10 @@
-import { useState, ChangeEvent, useEffect } from 'react'
+import { useState, ChangeEvent, useEffect, useRef, useCallback } from 'react'
 import * as S from './styles'
 import CreditCard from '../../components/CreditCard/CreditCard'
 import TransactionItem from '../../components/TransactionItem/TransactionItem'
 import api from '../../configs/api'
 import CircularProgress from '@mui/material/CircularProgress'
+import Modal, { ModalHandles } from '../../components/Modal/Modal'
 
 interface ITransactions {
   category: string;
@@ -17,15 +18,30 @@ interface ITransactions {
   userCustomerId: string;
 }
 
+interface IOptionsSelect {
+  label: string;
+  value: number;
+}
+
 const Transactions = () => {
-  const optionsSelect = ['Hoje', '1 semana', '1 mês'];
-  const [value, setValue] = useState<string>('1 mês');
+  const modalRef = useRef<ModalHandles>(null);
+  const [value, setValue] = useState<any>(0);
   const [transactions, setTransactions] = useState<ITransactions[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const optionsSelect: IOptionsSelect[] = [
+    {label: 'Hoje', value: 0}, 
+    {label: '1 semana', value: 7}, 
+    {label: '1 mês', value: 30}
+  ];
 
   const getTransactions = () => {
-    api.get('/transactions').then(response => {
-      setTransactions(response.data.users);
+    setLoading(true);
+    api.get('/transactions', {
+      params: {
+        'interval_date': value
+      }
+    }).then(response => {
+      setTransactions(response.data.transactions);
     }).catch(err => {
       throw new Error(err);
     }).finally(() => {
@@ -33,9 +49,13 @@ const Transactions = () => {
     })
   }
 
+  const handleOpenModal = useCallback(() => {
+    modalRef.current?.openModal();
+  }, []);
+
   useEffect(() => {
     getTransactions();
-  }, []);
+  }, [value]);
 
   return (
     <S.Transactions>
@@ -51,7 +71,7 @@ const Transactions = () => {
           </S.CardWrapper>
           <S.ListWrapper>
             <S.FilterWrapper>
-              <S.ListTitle>Histórico de transações</S.ListTitle>
+              <S.ListTitle>Histórico de saídas</S.ListTitle>
               <S.Select 
                 onChange={
                   (e: ChangeEvent<HTMLSelectElement>) => setValue(e.target.value)
@@ -59,12 +79,15 @@ const Transactions = () => {
                 value={value}
               >
                 {
-                  optionsSelect?.map((option: string, i: number) => (
-                    <S.Option key={i} value={option}>{option}</S.Option>
+                  optionsSelect?.map((option: IOptionsSelect) => (
+                    <S.Option key={option.value} value={option.value}>{option.label}</S.Option>
                   ))
                 }
               </S.Select>
             </S.FilterWrapper>
+            <S.BtwWrapper>
+              <S.BtnAdd onClick={handleOpenModal}>Adicionar despesa</S.BtnAdd>
+            </S.BtwWrapper>
             <S.TransactionItemWrapper>
               {transactions.map((items: ITransactions) => (
                   <TransactionItem
@@ -77,6 +100,7 @@ const Transactions = () => {
               }
             </S.TransactionItemWrapper>
           </S.ListWrapper>
+          <Modal ref={modalRef}/>
         </>
       }
     </S.Transactions>

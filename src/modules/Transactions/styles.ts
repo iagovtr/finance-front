@@ -27,6 +27,20 @@ export const FilterWrapper = styled.div`
   justify-content: space-between;
 `;
 
+export const BtwWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 12px;
+`;
+
+export const BtnAdd = styled.button`
+  background: transparent;
+  font-weight: 700;
+  font-size: 12px;
+  color: #E5E5E5;
+`;
+
 export const ListTitle = styled.h5`
   font-weight: 600;
   font-size: 14px;
